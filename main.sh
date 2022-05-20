@@ -1,6 +1,6 @@
 #!/bin/bash
 
-databasesPath="/home/muhmdamin/project/databases"
+databasesPath="/home/muhmdamin/Bash-project/databases"
 create_database () {
     maxchar=24
     read -p "Please enter database name: " name 
