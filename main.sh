@@ -15,7 +15,7 @@ select choice in "Create Database" "Connect to a Database" "List Databases" "Dro
             break 
             ;;
             3)
-            echo "database listed"
+            . ./list_databases.sh
             break
             ;;
             4)
