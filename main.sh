@@ -11,7 +11,7 @@ select choice in "Create Database" "Connect to a Database" "List Databases" "Dro
             break
             ;;
             2)
-            echo "database connected."
+            . ./database_connect.sh
             break 
             ;;
             3)
