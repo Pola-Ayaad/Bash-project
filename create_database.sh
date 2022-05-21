@@ -27,7 +27,7 @@ do
             echo "Unfortunately, this name already exists try another name."
         else
             mkdir ./Databases/"$name"
-            echo "congratulations, Your Database Added successfully 😀"
+            echo "congratulations, Your Database Added successfully"
             break
     fi  
 done
@@ -35,7 +35,7 @@ done
 echo "==========================================================="
 echo "please select your next action:"
 
-select choice in "Add Another Database" "Back To Main Menu" "Exit The Application" 
+select choice in "Add Another Database" "Back To Main Menu" "Exit" 
 do
    case $REPLY in
     1). ./create_database.sh

@@ -7,7 +7,7 @@ select choice in "Create Database" "Connect to a Database" "List Databases" "Dro
     do
         case $REPLY in
             1)
-            . ./create_database
+            . ./create_database.sh
             break
             ;;
             2)
