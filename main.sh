@@ -19,7 +19,7 @@ select choice in "Create Database" "Connect to a Database" "List Databases" "Dro
             break
             ;;
             4)
-            echo "Database dropped."
+            . ./delete_database.sh
             break
             ;;
             5)
