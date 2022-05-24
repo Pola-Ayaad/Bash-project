@@ -38,4 +38,35 @@ DB=`ls ./Databases | wc -l`
 		done
 	fi
 
+echo "==========================================================="
+echo "please select your next action:"
+
+if [ ! "$DB" == 0 ]
+	then
+		select choice in "Delete another database" "Back To Main Menu" "Exit" 
+			do
+   				case $REPLY in
+					1). ./delete_database.sh
+					;;
+					2). ./main.sh
+					;;
+					3) exit
+					;;
+					*) echo "Wrong choice, Please enter a valid option"
+					;;
+    			esac
+			done
+else
+	select choice in "Back To Main Menu" "Exit" 
+		do
+   			case $REPLY in
+				1). ./main.sh
+					;;
+				2) exit
+					;;
+				*) echo "Wrong choice, Please enter a valid option"
+					;;
+    		esac
+		done	
+fi
 
