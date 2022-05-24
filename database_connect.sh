@@ -32,13 +32,13 @@ DB=`ls ./Databases | wc -l`
         do
           if [ "$1" == "yes" ]
           then
-            DBname = $DBname
+            dbname = $dbname
           else
             echo "Please Enter the Database Name "
-            read DBname
+            read dbname
           fi  
                
-               if [[ ! "$DBname" =~  ^[[:alpha:]][[:alnum:]]*$  ]] 
+               if [[ ! "$dbname" =~  ^[[:alpha:]][[:alnum:]]*$  ]] 
                then
                 echo "Database Formating is Wrong" 
                  
@@ -46,13 +46,13 @@ DB=`ls ./Databases | wc -l`
                 
 
                 
-               elif [ ! -d ./Databases/"$DBname" ]
+               elif [ ! -d ./Databases/"$dbname" ]
                then
                    echo "This Database doesn't exit"
                
                else
                      clear
-                     echo "Welcome to" $DBname
+                     echo "Welcome to" $dbname
                      break
 
                 fi
