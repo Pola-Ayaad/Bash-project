@@ -5,15 +5,14 @@ if ! [ -d ./Databases ]
     then
          mkdir ./Databases
 fi
-maxchar=24
 
 while true
 do
     while true
     do
-        read -p "Please enter database name: " name
-        export name
-        if [ ${#name} -lt $maxchar ] && [[ $name == +([A-Za-z])* ]];
+        read -p "Please enter database name: " dbname
+        export dbname
+        if [[ ! $dbname =~ ['!@#$%^&*()+'] ]] && [[ $dbname == +([A-Za-z])* ]];
             then
                 break
             else
@@ -22,11 +21,11 @@ do
     done
     
     #check for database existence
-    if [ -d ./Databases/"$name" ]
+    if [ -d ./Databases/"$dbname" ]
         then
             echo "Unfortunately, this name already exists try another name."
         else
-            mkdir ./Databases/"$name"
+            mkdir ./Databases/"$dbname"
             echo "congratulations, Your Database Added successfully"
             break
     fi  
