@@ -65,23 +65,21 @@ echo "Please Choose from the following"
 
 if [ ! "$db" == 0 ]
 then
-    select choice in "Create New Table" "Delete Specific Table" "List Specific Table" "List All Available Database Tables" "Back To Choose Another DB" "Back To Main Menu" "Exit the Application"
+    select choice in "Create New Table" "Delete Specific Table" "List All Available Database Tables" "Back To Choose Another DB" "Back To Main Menu" "Exit the Application"
 
     do
 	    case $REPLY in
        1) . ./create_table.sh
             ;;
-       2) . echo"./DeleteTable"
+       2) echo "./DeleteTable"
             ;;
-       3) . echo"ListSpecificTable.sh no"
+       3) . ./list_tables.sh
             ;;
-       4) . ./list_tables.sh
+       4) . ./database_connect.sh no
+   	     ;;
+       5) . ./main.sh
             ;;
-       5) . ./database_connect.sh no
-   	    ;;
-       6) . ./menu.sh
-            ;;
-       7)    exit
+       6)    exit
             ;;
        *)  echo "Invalid Selection, Please Try again"
             ;;
