@@ -59,3 +59,45 @@ DB=`ls ./Databases | wc -l`
         done
     fi
 
+
+
+echo "Please Choose from the following"
+
+if [ ! "$db" == 0 ]
+then
+    select choice in "Create New Table" "Delete Specific Table" "List Specific Table" "List All Available Database Tables" "Back To Choose Another DB" "Back To Main Menu" "Exit the Application"
+
+    do
+	    case $REPLY in
+       1) . ./create_table.sh
+            ;;
+       2) . echo"./DeleteTable"
+            ;;
+       3) . echo"ListSpecificTable.sh no"
+            ;;
+       4) . ./list_tables.sh
+            ;;
+       5) . ./database_connect.sh no
+   	    ;;
+       6) . ./menu.sh
+            ;;
+       7)    exit
+            ;;
+       *)  echo "Invalid Selection, Please Try again"
+            ;;
+       esac
+    done
+else
+      select choice in "Back To Main Menu" "Exit the Application"
+      do
+          case $REPLY in
+            1). ./main.sh
+                  ;;
+            2) exit
+                  ;;
+            *) echo "Invalid Selection Please Try again"
+                  ;;
+          esac
+      done
+fi
+
