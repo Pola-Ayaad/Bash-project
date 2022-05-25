@@ -16,14 +16,16 @@ fi
 
 echo "==========================================================="
 echo "please select your next action:"
-select choice in "Back To Main Menu" "Exit" 
+select choice in "Back" "Back To Main Menu" "Exit" 
 do
    case $REPLY in
-    1). ./main.sh
-       ;;
-    2) exit
-       ;;
-    *) echo "Wrong choice, Please enter a valid option"
-       ;;
+      1). ./database_connect.sh yes
+      ;;
+      2). ./main.sh
+      ;;
+      3) exit
+      ;;
+      *) echo "Wrong choice, Please enter a valid option"
+      ;;
     esac
 done
