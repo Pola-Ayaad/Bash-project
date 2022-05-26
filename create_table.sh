@@ -1,5 +1,9 @@
 #!/bin/bash
 clear
+echo "Create Table:"
+echo "-------------"
+
+#If user doesn't have directory for databases, create it
 if ! [ -d ./Databases ]
 then
     mkdir ./Databases
@@ -17,12 +21,12 @@ do
         then
             break
         else
-            echo "invalid name."
+            echo "Invalid name for a table."
         fi
     done
 
     #check for table existence
-    if [ -f ./Databases/$dbname/"$table_name" ]
+    if [ -f ./Databases/$dbname/$table_name ]
     then
         echo "Unfortunately, this name already exists try another name."
     else
@@ -35,7 +39,7 @@ do
         do
             read -p "Enter number of columns: " col_num
             export col_num
-            if [[ ! "$col_num" =~  ^[1-9][0-9]*$ ]]
+            if [[ ! $col_num =~  ^[1-9][0-9]*$ ]]
             then
                 echo "Enter a valid number of columns"
             else
@@ -47,12 +51,12 @@ do
         while true
         do
             read -p "Please enter name of primary key: " pk
-            #Validate pk name
+            #Validate primary key name, begins with a letter and doesn't contain special characters.
             if [[ $pk == +([A-Za-z])* ]] && [[ ! $pk =~ ['!@#$%^&*()+_'] ]]
             then
                 break
             else
-                echo "invalid name."
+                echo "Invalid name for a primary key."
             fi
         done
         
@@ -71,7 +75,7 @@ do
                 then
                     break
                 else
-                    echo "invalid name."
+                    echo "Invalid name for a column."
                 fi
             done
 
@@ -80,15 +84,15 @@ do
             for col in `echo ${columns[@]} $pk`
             do
                 if [ $col == $col_name ]
-                    then
-                        found=1
-                        break
+                then
+                    found=1
+                    break
                 fi
             done
             if [ $found == 1 ]
-                then
-                    echo "Column name already exist"
-                    continue
+            then
+                echo "Column name already exist"
+                continue
             fi
             columns[$col_counter]=$col_name
             
@@ -127,9 +131,9 @@ do
     fi
 done
 echo "==========================================================="
-echo "please select your next action:"
+echo "Please select your next action: "
 
-select choice in "Add another Table" "Back" "Back To Main Menu" "Exit"
+select choice in "Add another Table" "Back" "Back to main menu" "Exit"
 do
     case $REPLY in
         1). ./create_table.sh

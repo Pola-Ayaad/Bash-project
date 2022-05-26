@@ -1,10 +1,18 @@
 #!/bin/bash
 clear
+echo "Display Table:"
+echo "--------------"
+
+#If user doesn't have directory for databases, create it
+if ! [ -d ./Databases ]
+then
+     mkdir ./Databases
+fi
 
 tables=`ls ./Databases/$dbname | wc -l`
 if [ $tables == 0 ]
 then
-    echo "Sorry, No tables found."
+    echo "No Tables Found."
 else
     echo "Tables List: "
     echo "==============================="
@@ -35,8 +43,8 @@ else
     done
 fi
 
-echo "========================================"
-echo "please select your next action: "
+echo "==========================================================="
+echo "Please select your next action: "
 if [ ! $tables == 0 ]
 then
     select choice in "Insert into table" "Select from table" "Delete from table" "Update Table" "Display Another Table" "Connect to another database" "Back to main menu" "Exit"
@@ -58,7 +66,7 @@ then
             ;;
             8) exit
             ;;
-            *) echo "Invalid Option. Try again."
+            *) echo "Wrong choice, Please enter a valid option"
         esac
     done
 else
@@ -73,7 +81,7 @@ else
             ;;
             4) exit
             ;;
-            *) echo "Invalid Option. Try again."
+            *) echo "Wrong choice, Please enter a valid option"
         esac
     done
 fi
