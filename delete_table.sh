@@ -60,7 +60,11 @@ else
      select choice in "Back" "Back To Main Menu" "Exit the Application" 
       do
           case $REPLY in
+<<<<<<< HEAD
             1). ./database_connet.sh 
+=======
+            1). ./database_connect.sh yes
+>>>>>>> 211d31091bac0a7e61a32971610cc6c1209d2a88
                   ;;    
             2). ./main.sh  
                   ;;      
