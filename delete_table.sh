@@ -61,7 +61,7 @@ else
       do
           case $REPLY in
 
-            1). ./database_connet.sh 
+            1). ./database_connect.sh 
                   ;;
 	    2). ./main.sh  
                   ;;      
