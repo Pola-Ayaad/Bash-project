@@ -12,9 +12,9 @@ DB=`ls ./Databases | wc -l`
     if [ "$DB" == 0 ]
     then
         echo "There are no Databases"
-	echo "Would you like to create a New Database? (Y or N)"
+	echo "Would you like to create a New Database? (y or n)"
 	read input 
-	if [ $input == "Y" ]
+	if [ $input == "y" ]
 	then
 		./create_database.sh
 	else
