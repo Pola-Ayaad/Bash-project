@@ -71,7 +71,7 @@ then
 	     case $REPLY in
                1) . ./create_table.sh
                ;;
-               2) echo "./DeleteTable"
+               2) . ./delete_table.sh
                ;;
                3) . ./display_table.sh no
                ;;
