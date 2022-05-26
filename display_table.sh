@@ -24,7 +24,6 @@ else
             if [ -f ./Databases/$dbname/$table_name ]
             then
                 clear
-                echo "This is $table_name"
                 cat ./Databases/$dbname/$table_name
                 break
             else
@@ -40,22 +39,24 @@ echo "========================================"
 echo "please select your next action: "
 if [ ! $tables == 0 ]
 then
-    select choice in "Insert into table" "Delete from table" "Update Table" "Display Another Table" "Connect to another database" "Back to main menu" "Exit"
+    select choice in "Insert into table" "Select from table" "Delete from table" "Update Table" "Display Another Table" "Connect to another database" "Back to main menu" "Exit"
     do
         case $REPLY in
             1) . ./insert_into_table.sh
             ;;
-            2) . ./delete_from_table.sh
+            2) . ./select_from_table.sh
             ;;
-            3) . ./update_table.sh
+            3) . ./delete_from_table.sh
             ;;
-            4) . ./display_table.sh no
+            4) . ./update_table.sh
             ;;
-            5) . ./database_connect.sh no
+            5) . ./display_table.sh no
             ;;
-            6) . ./main.sh
+            6) . ./database_connect.sh no
             ;;
-            7) exit
+            7) . ./main.sh
+            ;;
+            8) exit
             ;;
             *) echo "Invalid Option. Try again."
         esac
