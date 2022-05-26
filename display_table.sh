@@ -46,7 +46,7 @@ then
             ;;
             2) . ./select_from_table.sh
             ;;
-            3) . ./delete_from_table.sh
+            3) . ./delete_record.sh
             ;;
             4) . ./update_table.sh
             ;;
