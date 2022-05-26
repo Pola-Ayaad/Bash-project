@@ -1,5 +1,14 @@
 #!/bin/bash
 clear
+echo "Select From Table:"
+echo "----------------- "
+
+#If user doesn't have directory for databases, create it
+if ! [ -d ./Databases ]
+then
+     mkdir ./Databases
+fi
+
 found=0
 #Display Table
 cat ./Databases/$dbname/$table_name
@@ -58,6 +67,6 @@ do
         ;;
         4) exit
         ;;
-        *) echo "Invalid Option. Try again."
+        *) echo "Wrong choice, Please enter a valid option"
     esac
 done

@@ -1,5 +1,13 @@
 #!/bin/bash
 clear
+echo "Insert Into Table:"
+echo "-------------------"
+
+#If user doesn't have directory for databases, create it
+if ! [ -d ./Databases ]
+then
+     mkdir ./Databases
+fi
 
 col_pointer=2
 col_separator=":"
@@ -63,8 +71,8 @@ echo "============================================================="
 #Display table after insertion
 cat ./Databases/$dbname/$table_name
 
-echo "============================================================="
-echo "please select your next action:"
+echo "==========================================================="
+echo "Please select your next action: "
 select choice in "Add another record." "Back" "Back To Main Menu" "Exit" 
 do
    case $REPLY in
