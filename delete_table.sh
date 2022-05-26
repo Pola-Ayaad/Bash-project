@@ -46,9 +46,9 @@ then
           case $REPLY in
             1). ./delete_table.sh
                   ;;
-            2). ./database_connect.sh yes
+            2). ./database_connect.sh 
                   ;;
-            2). ./main.sh  
+            3). ./main.sh  
                   ;;
             4) exit
                   ;;
@@ -60,7 +60,7 @@ else
      select choice in "Back" "Back To Main Menu" "Exit the Application" 
       do
           case $REPLY in
-            1). ./database_connet.sh yes
+            1). ./database_connet.sh 
                   ;;    
             2). ./main.sh  
                   ;;      
