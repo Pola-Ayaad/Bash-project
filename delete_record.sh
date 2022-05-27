@@ -1,6 +1,13 @@
 #!/bin/bash
-
 clear
+echo "Delete From Table:"
+echo "----------------- "
+
+#If user doesn't have directory for databases, create it
+if ! [ -d ./Databases ]
+then
+     mkdir ./Databases
+fi
 
 cat ./Databases/"$dbname"/"$table_name"
 

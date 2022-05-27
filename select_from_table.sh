@@ -9,7 +9,8 @@ then
      mkdir ./Databases
 fi
 
-found=0
+record_found=0
+
 #Display Table
 cat ./Databases/$dbname/$table_name
 echo "==============================================="
@@ -43,15 +44,15 @@ else
         if [ $primary_key -eq `awk -F: 'FNR == '$record_pointer' {print $1}' ./Databases/$dbname/$table_name` ]
         then
             awk 'FNR == '$record_pointer' {print}' ./Databases/$dbname/$table_name
-            found=1
+            record_found=1
             break
         fi
         ((record_pointer=record_pointer+1))
     done
-    #If no records found for given pk
-    if [ $found == 0 ]
+    #If no records record_found for given pk
+    if [ $record_found == 0 ]
     then
-        echo "Record not found"
+        echo "Record not record_found"
     fi
 fi
 echo "====================================================================="
