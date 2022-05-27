@@ -68,20 +68,18 @@ then
   echo "please select your next action from the following actions"
   
 
-select choice in "Delete another Record" "Add New Record" "Update Into Table" "Back" "Back To Main Menu" "Exit the Application"
+select choice in "Delete another Record" "Add New Record" "Back" "Back To Main Menu" "Exit the Application"
     do
        case $REPLY in
         1). ./delete_record.sh
           ;;
         2). ./insert_into_table.sh
           ;;
-        3) . ./update_table.sh
-         ;;
-        4). ./display_table.sh yes
+        3). ./display_table.sh yes
           ;;
-        5). ./main.sh
+        4). ./main.sh
           ;;
-        6) exit
+        5) exit
           ;;
         *) echo "Wrong choice, Please enter a valid option"
           ;;

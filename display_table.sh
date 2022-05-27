@@ -47,7 +47,7 @@ echo "==========================================================="
 echo "Please select your next action: "
 if [ ! $tables == 0 ]
 then
-    select choice in "Insert into table" "Select from table" "Delete from table" "Update Table" "Display Another Table" "Connect to another database" "Back to main menu" "Exit"
+    select choice in "Insert into table" "Select from table" "Delete from table" "Display Another Table" "Connect to another database" "Back to main menu" "Exit"
     do
         case $REPLY in
             1) . ./insert_into_table.sh
@@ -56,15 +56,13 @@ then
             ;;
             3) . ./delete_record.sh
             ;;
-            4) . ./update_table.sh
+            4) . ./display_table.sh no
             ;;
-            5) . ./display_table.sh no
+            5) . ./database_connect.sh no
             ;;
-            6) . ./database_connect.sh no
+            6) . ./main.sh
             ;;
-            7) . ./main.sh
-            ;;
-            8) exit
+            7) exit
             ;;
             *) echo "Wrong choice, Please enter a valid option"
         esac
