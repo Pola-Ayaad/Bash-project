@@ -68,15 +68,15 @@ select choice in "Delete another Record" "Add New Record" "Update Into Table" "B
           ;;
         2). ./insert_into_table.sh
           ;;
-        3) . ./UpdateRecord.sh
+        3) . ./update_table.sh
          ;;
-        4). ./list_tables.sh yes
+        4). ./display_table.sh yes
           ;;
         5). ./main.sh
           ;;
         6) exit
           ;;
-        *) echo "Invalid Selection!"
+        *) echo "Wrong choice, Please enter a valid option"
           ;;
        esac
     done
@@ -89,13 +89,13 @@ else
        case $REPLY in
         1). ./insert_into_table.sh
           ;;
-        2). ./list_tables.sh yes
+        2). ./display_table.sh yes
           ;;
         3). ./main.sh
           ;;
         4) exit
           ;;
-        *) echo "Invalid Selection!"
+        *) echo "Wrong choice, Please enter a valid option"
           ;;
        esac
     done
